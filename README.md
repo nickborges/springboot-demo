@@ -45,6 +45,7 @@
 	* Receber UriComponentesBuilder no parâmetro para devolver a URI com o novo recurso criado.
 	* status 201: created, devolver o recurso criado no response o no cabeçalho a URI do novo recurso
     * status 202: accepted, intenção de criar o novo recurso mas não criou ainda.
+    * status 400: badrequest para validação de campos obrigatórios no body
     * status 401: não autorizado
     * status 403: Forbidden
     
@@ -53,6 +54,7 @@
 	* @Transactional, colocar no método do controller, é usado para o caso de apenas consultar o registro pelo {id} alterar os dados e pronto(não precisa usar o método save do jpa).
 	* status 200: sucesso e retorna uma mensagem.
 	* status 204: sucesso e retorna o corpo vazio
+	* status 400: badrequest para validação de campos obrigatórios no body
 	* status 401: não autorizado
     * status 403: Forbidden
 	* status 404: caso não ache o regitro para alterar
