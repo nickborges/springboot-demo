@@ -123,7 +123,14 @@
 
 
 ### PAGINAÇÃO:
-- colocar a descrição aqui
+- incluir na classe application:
+    * @EnableSpringDataWebSupport
+- incluir no parâmetro método do controller:
+    * @PageableDefault(sort = "nomedocampo", direction = Direction.DESC, page = 0, size = 10) Pageable paginacao
+    * @PageableDefault, não é obrigatório é usado apenas se quiser ter valores default
+- exemplo de chamada:
+    * http://localhost:8080/user/all?page=0&size=10&sort=name,asc
+    * localhost:8080/user/all?page=0&size=10&sort=name,asc&sort=id,asc
 
 
 ### CACHE:
