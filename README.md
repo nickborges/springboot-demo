@@ -43,10 +43,10 @@
 -- Receber UriComponentesBuilder no parâmetro para devolver a URI com o novo recurso criado.
 
 - PUT @PutMapping;
--- @Transactional, colocar no método do controller, é usado para o caso de apenas consultar o registro pelo {id} alterar os dados e pronto(não precisa usar o método save do jpa).
--- status 200: sucesso e retorna uma mensagem.
--- status 204: sucesso e retorna o corpo vazio
--- status 404: caso não ache o regitro para alterar
+	* @Transactional, colocar no método do controller, é usado para o caso de apenas consultar o registro pelo {id} alterar os dados e pronto(não precisa usar o método save do jpa).
+	* status 200: sucesso e retorna uma mensagem.
+	* status 204: sucesso e retorna o corpo vazio
+	* status 404: caso não ache o regitro para alterar
 
 - DELETE @DeleteMapping; (excluí um recurso).
 -- @Transactional, colocar no método do controller, é usado para o caso de apenas consultar o registro pelo {id} alterar os dados e pronto(não precisa usar o método save do jpa).
