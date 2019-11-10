@@ -8,8 +8,8 @@
 | Spring Boot 2.2	  | Java 12		|
 
 
-CRIAR O PROJETO:
-    - [x] Criar o projeto Spring Initialazer, através do site https://start.spring.io;
+## CRIAR O PROJETO:
+- Criar o projeto Spring Initialazer, através do site https://start.spring.io;
 
 CONFIGURAÇÕES:
     - [x] Por padrão, converte os dados no formato JSON, utilizando a biblioteca Jackson;
