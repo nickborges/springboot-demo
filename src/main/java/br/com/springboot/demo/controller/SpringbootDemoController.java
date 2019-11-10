@@ -4,6 +4,9 @@ import br.com.springboot.demo.domain.UserRequest;
 import br.com.springboot.demo.domain.UserResponse;
 import br.com.springboot.demo.service.SpringbootDemoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -18,8 +21,13 @@ public class SpringbootDemoController {
     SpringbootDemoService service;
 
     @GetMapping("/all")
-    public ResponseEntity execute(){
-        return ResponseEntity.ok(service.execute());
+    public ResponseEntity execute(
+            @PageableDefault(sort = "name",
+                             direction = Sort.Direction.ASC,
+                             page = 0,
+                             size = 10) Pageable page){
+
+        return ResponseEntity.ok(service.execute(page));
     }
 
     @GetMapping("/{id}")
