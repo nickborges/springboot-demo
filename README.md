@@ -8,7 +8,7 @@
 | Spring Boot 2.2	  | Java 12		|
 
 
-## CRIAR O PROJETO:
+### CRIAR O PROJETO:
 - Através do Spring Initialazer https://start.spring.io;
 
 ## CONFIGURAÇÕES:
@@ -86,7 +86,7 @@
 - O método getOne lança uma exception quando o id passado como parâmetro não existir no banco de dados;
 - O método findById retorna um objeto Optional<>, que pode ou não conter um objeto.
 
-# AUTENTICAÇÃO:
+## AUTENTICAÇÃO:
 	http://localhost:8080/auth
 	{
 		“email”: “aluno@email.com”,
