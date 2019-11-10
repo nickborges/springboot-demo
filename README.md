@@ -127,7 +127,7 @@
 	
 
 ### HTTP Status:
-<p>
+
 * <b>2xx: Successful</b>
 	* 200 (Ok): retornado para indicar que o estado da transação está completo.
 	* 201 (Created): retornado para indicar que um recurso foi criado.
@@ -139,7 +139,7 @@
 	* 205 (Reset Content): 
 	* 206 (Partial Content): 
 
-* 3xx: Redirection
+* <b>3xx: Redirection</b>
 	* 300(Multiple Choices):
 	* 301(Moved Permanently):
 	* 302(Found):
@@ -150,7 +150,7 @@
 	* 307(Temporary Redirect):
 	* 308(Permanent Redirect):
 
-* 4xx: Client-Side Error:
+* <b>4xx: Client-Side Error:</b>
 	* 400 (Bad Request):
 	* 401 (Unauthorized):
 	* 402 (Payment Required):
@@ -174,7 +174,7 @@
 	* 431 (Request Header Fields Too Large):
 	* 451 (Unavailable For Legal Reasons):
 
-* 5xx: Server-Side Error
+* <b>5xx: Server-Side Error</b>
 	* 500 (Internal Server Error):
 	* 501 (Not Implemented):
 	* 502 (Bad Gateway):
@@ -183,4 +183,3 @@
 	* 505 (HTTP Version Not Supported):
 	* 511 (Network Authentication Required):
 
-</p>
