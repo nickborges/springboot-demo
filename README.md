@@ -123,7 +123,7 @@
 
 
 ### PAGINAÇÃO:
-- incluir na classe application:
+- habilitar a paginação na classe application:
     * @EnableSpringDataWebSupport
 - incluir no parâmetro método do controller:
     * @PageableDefault(sort = "nomedocampo", direction = Direction.DESC, page = 0, size = 10) Pageable paginacao
@@ -134,7 +134,12 @@
 
 
 ### CACHE:
-- colocar a descrição aqui
+- habilitar o cache na classe application:
+    * @EnableCaching
+- incluir no método do controller: 
+    * @Cacheable(value = "nomeDoAtributoDeCache")
+- incluir no método do controller(alteração, para limpar o cache): 
+    * @CacheEvict(value = "nomeDoAtributoDeCache", allEntries = true)
 
 
 ### MONITORAMENTO ACTUATOR:
