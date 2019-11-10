@@ -1,4 +1,14 @@
 INSERT INTO USER(name, age) VALUES('Nick Kras Borges', 99);
+INSERT INTO USER(name, age) VALUES('Fulano 1', 29);
+INSERT INTO USER(name, age) VALUES('Fulano 2', 30);
+INSERT INTO USER(name, age) VALUES('Fulano 3', 31);
+INSERT INTO USER(name, age) VALUES('Fulano 4', 32);
+INSERT INTO USER(name, age) VALUES('Fulano 5', 33);
+INSERT INTO USER(name, age) VALUES('Fulano 6', 34);
+INSERT INTO USER(name, age) VALUES('Fulano 7', 35);
+INSERT INTO USER(name, age) VALUES('Fulano 8', 36);
+INSERT INTO USER(name, age) VALUES('Fulano 9', 37);
+INSERT INTO USER(name, age) VALUES('Fulano 10', 38);
 
 --INSERT INTO CURSO(nome, categoria) VALUES('Spring Boot', 'Programação');
 --INSERT INTO CURSO(nome, categoria) VALUES('HTML 5', 'Front-end');
