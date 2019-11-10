@@ -1,11 +1,12 @@
 # springboot-demo
 
-#### ————————————————————————————————————-
-#### | Spring Boot 2:	  Java 8 e 9	|
-#### | Spring Boot 2.0.1: Java 10	|
-#### | Spring Boot 2.1.0: Java 11	|
-#### | Spring Boot 2.2:	  Java 12	|
-#### ————————————————————————————————————-
+| Versões		  | Java		|
+| ----------------------- | ------------------- |
+| Spring Boot 2:	  | Java 8 e 9		|
+| Spring Boot 2.0.1:	  | Java 10		|
+| Spring Boot 2.1.0:	  | Java 11		|
+| Spring Boot 2.2:	  | Java 12		|
+
 
 CRIAR O PROJETO:
     - [x] Criar o projeto Spring Initialazer, através do site https://start.spring.io;
