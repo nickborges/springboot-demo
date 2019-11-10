@@ -1,8 +1,8 @@
 # springboot-demo
 
-| Versões		  | Java		|
-| ----------------------- | ------------------- |
-| Spring Boot 2	  	  | Java 8 e 9		|
+| Versões		      | Java		|
+| ------------------- | ----------- |
+| Spring Boot 2	  	  | Java 8 e 9	|
 | Spring Boot 2.0.1	  | Java 10		|
 | Spring Boot 2.1.0	  | Java 11		|
 | Spring Boot 2.2	  | Java 12		|
@@ -20,7 +20,9 @@
 - Banco de dados H2, configurar o console do H2 com propriedades no arquivo src/main/resources/application.properties;
 
 ### SWAGGER: 
-- colocar aqui a descrição
+- colocar no application @EnableSwagger2
+- criar a classe SwaggerConfigurations
+- http://localhost:8080/swagger-ui.html
 
 ### CONTROLLER’S:
 - Anotações @Controller ou @RestController e @RequestMapping

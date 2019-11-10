@@ -1,4 +1,4 @@
-package br.com.springboot.demo.config;
+package br.com.springboot.demo.config.validation;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
