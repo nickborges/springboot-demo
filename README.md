@@ -34,20 +34,27 @@
 - GET @GetMapping; (recupera a representação de um recurso)
 	* status 200: sucesso
 	* status 301: Moved Permanently
+	* status 401: não autorizado
+    * status 403: Forbidden
 	* status 404: caso não ache o regitro para deletar
 
 - POST @PostMapping; (cria um novo recurso)
 	* @RequestBody, para informar no parâmetro para o spring que é para pegar o conteúdo do corpo do método.
-	* status 201: created, devolver o recurso criado no response o no cabeçalho a URI do novo recurso
-	* status 202: accepted, intenção de criar o novo recurso mas não criou ainda.
 	* Boa prática para métodos que cadastram informações é devolver o código HTTP 201, ao invés do código 200;
 	* Para montar uma resposta a ser devolvida ao cliente da API, devemos utilizar a classe ResponseEntity do Spring;
 	* Receber UriComponentesBuilder no parâmetro para devolver a URI com o novo recurso criado.
+	* status 201: created, devolver o recurso criado no response o no cabeçalho a URI do novo recurso
+    * status 202: accepted, intenção de criar o novo recurso mas não criou ainda.
+    * status 401: não autorizado
+    * status 403: Forbidden
+    
 
 - PUT @PutMapping;
 	* @Transactional, colocar no método do controller, é usado para o caso de apenas consultar o registro pelo {id} alterar os dados e pronto(não precisa usar o método save do jpa).
 	* status 200: sucesso e retorna uma mensagem.
 	* status 204: sucesso e retorna o corpo vazio
+	* status 401: não autorizado
+    * status 403: Forbidden
 	* status 404: caso não ache o regitro para alterar
 
 - DELETE @DeleteMapping; (excluí um recurso).
@@ -55,6 +62,8 @@
 	* status 200: sucesso e retorna uma mensagem.
 	* status 202: sucesso e vai deletar depois.
 	* status 204: sucesso e retorna o corpo vazio
+	* status 401: não autorizado
+	* status 403: Forbidden
 	* status 404: caso não ache o regitro para deletar
 
 - HEAD (versão mais leve do GET)
