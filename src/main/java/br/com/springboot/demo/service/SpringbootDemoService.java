@@ -8,7 +8,7 @@ import br.com.springboot.demo.model.User;
 import br.com.springboot.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import br.com.springboot.demo.config.NotFoundException;
+import br.com.springboot.demo.config.validation.NotFoundException;
 
 @Service
 public class SpringbootDemoService {
