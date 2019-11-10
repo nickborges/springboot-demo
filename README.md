@@ -11,7 +11,7 @@
 ### CRIAR O PROJETO:
 - Através do Spring Initialazer https://start.spring.io;
 
-## CONFIGURAÇÕES:
+### CONFIGURAÇÕES:
 - Por padrão, converte os dados no formato JSON, utilizando a biblioteca Jackson;
 - Dependência spring-boot-starter-web;
 - Dependência spring-boot-devtools, hot deploy;
@@ -19,16 +19,16 @@
 - Configurar o Lombok;
 - Banco de dados H2, configurar o console do H2 com propriedades no arquivo src/main/resources/application.properties;
 
-## SWAGGER: 
+### SWAGGER: 
 - colocar aqui a descrição
 
-## CONTROLLER’S:
+### CONTROLLER’S:
 - Anotações @Controller ou @RestController e @RequestMapping
 - Para não retornar a requisição como uma página JSP, ou Thymeleaf, devemos utilizar a anotação @ResponseBody caso utilizado @Controller;
 - Para não repetir a anotação @ResponseBody em todos os métodos do controller, devemos utilizar a anotação @RestController;
 - Para evitar repetir a URL em todos os métodos, devemos utilizar a anotação @RequestMapping em cima da classe controller;
 
-## VERBOS HTTP:
+### VERBOS HTTP:
 - GET @GetMapping; (recupera a representação de um recurso)
 	* status 200: sucesso
 	* status 301: Moved Permanently
@@ -68,25 +68,25 @@
 - OPTIONS (verbo primitivo de HTTP)
 	* status 200: sucesso
 
-## OBSERVAÇÕES:
+### OBSERVAÇÕES:
 - Para receber parâmetros dinâmicos no path da URL, devemos utilizar a anotação @PathVariable;
 - Utilizar a classe ResponseEntity para montar a resposta de not found;
 - Controle transacional automático, devemos utilizar a anotação @Transactional nos métodos do controller;
 
-## VALIDATIONS:
+### VALIDATIONS:
 - Para fazer validações das informações enviadas pelos clientes da API, podemos utilizar a especificação Bean Validation, com as anotações @NotNull, @NotEmpty, @Size, dentre outras;
 - Para o Spring disparar as validações do Bean Validation e devolver um erro 400, caso alguma informação enviada pelo cliente esteja inválida, devemos utilizar a anotação @Valid;
 
-## EXCEPTIONS:
+### EXCEPTIONS:
 - Para interceptar as exceptions que forem lançadas nos métodos das classes controller, devemos criar uma classe anotada com @RestControllerAdvice;
 - Para tratar os erros de validação do Bean Validation e personalizar o JSON, que será devolvido ao cliente da API, com as mensagens de erro, devemos criar um método na classe @RestControllerAdvice e anotá-lo com @ExceptionHandler e @ResponseStatus
 
-## REPOSITORY:
+### REPOSITORY:
 - Para mapear as classes de domínio da aplicação como entidade JPA, devemos utilizar as anotações @Entity, @Id, @GeneratedValue, @ManyToOne, @OneToMany e @Enumerated;
 - O método getOne lança uma exception quando o id passado como parâmetro não existir no banco de dados;
 - O método findById retorna um objeto Optional<>, que pode ou não conter um objeto.
 
-## AUTENTICAÇÃO:
+### AUTENTICAÇÃO:
 	http://localhost:8080/auth
 	{
 		“email”: “aluno@email.com”,
@@ -109,15 +109,15 @@
 
 
 
-## PAGINAÇÃO:
+### PAGINAÇÃO:
 - colocar a descrição aqui
 
 
-## CACHE:
+### CACHE:
 - colocar a descrição aqui
 
 
-## MONITORAMENTO ACTUATOR:
+### MONITORAMENTO ACTUATOR:
 	http://localhost:8080/actuator
 	só devolve json: mas pode ser usado o Spring Bood Admin (uma aplicação web criada por uma empresa alemã)
 	1) criar um projeto com Spring initialazer 
@@ -126,7 +126,7 @@
 
 	
 
-## HTTP Status:
+### HTTP Status:
 
 2xx: Successful
 200 (Ok): retornado para indicar que o estado da transação está completo.
