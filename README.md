@@ -127,8 +127,8 @@
 	
 
 ### HTTP Status:
-<h6>
-* 2xx: Successful
+
+* <b>2xx: Successful</b>
 	* 200 (Ok): retornado para indicar que o estado da transação está completo.
 	* 201 (Created): retornado para indicar que um recurso foi criado.
 	Response headers: o Location do cabeçalho deveria conter a URL do novo recurso
@@ -183,4 +183,4 @@
 505 (HTTP Version Not Supported):
 511 (Network Authentication Required):
 
-</h6>
+
