@@ -10,7 +10,6 @@ import springfox.documentation.schema.ModelRef;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
-
 import java.util.Arrays;
 
 @Configuration
@@ -21,7 +20,7 @@ public class SwaggerConfigurations {
     public Docket api(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("br.com.alura.forum"))
+                .apis(RequestHandlerSelectors.basePackage("br.com.springboot.demo"))
                 .paths(PathSelectors.ant("/**"))
                 .build()
                 .ignoredParameterTypes(User.class)
