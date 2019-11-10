@@ -128,27 +128,27 @@
 
 ### HTTP Status:
 
-2xx: Successful
-200 (Ok): retornado para indicar que o estado da transação está completo.
-201 (Created): retornado para indicar que um recurso foi criado.
+* 2xx: Successful
+	* 200 (Ok): retornado para indicar que o estado da transação está completo.
+	* 201 (Created): retornado para indicar que um recurso foi criado.
 	Response headers: o Location do cabeçalho deveria conter a URL do novo recurso
 	Entity-body: deve retornar a representação do novo recurso criado(objeto).
-202 (Accepted): 
-203 (Non-Authoritative Information): 
-204 (No Content): retornado caso o recurso esteja vazio.
-205 (Reset Content): 
-206 (Partial Content): 
+	* 202 (Accepted): 
+	* 203 (Non-Authoritative Information): 
+	* 204 (No Content): retornado caso o recurso esteja vazio.
+	* 205 (Reset Content): 
+	* 206 (Partial Content): 
 
-3xx: Redirection
-300(Multiple Choices):
-301(Moved Permanently):
-302(Found):
-303(See Other):
-304(Not Modified):
-305(Use Proxy):
-306(Unused):
-307(Temporary Redirect):
-308(Permanent Redirect):
+* 3xx: Redirection
+	* 300(Multiple Choices):
+	* 301(Moved Permanently):
+	* 302(Found):
+	* 303(See Other):
+	* 304(Not Modified):
+	* 305(Use Proxy):
+	* 306(Unused):
+	* 307(Temporary Redirect):
+	* 308(Permanent Redirect):
 
 4xx: Client-Side Error:
 400 (Bad Request):
