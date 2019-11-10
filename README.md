@@ -127,7 +127,7 @@
 	
 
 ### HTTP Status:
-
+<h6>
 * 2xx: Successful
 	* 200 (Ok): retornado para indicar que o estado da transação está completo.
 	* 201 (Created): retornado para indicar que um recurso foi criado.
@@ -183,3 +183,4 @@
 505 (HTTP Version Not Supported):
 511 (Network Authentication Required):
 
+</h6>
