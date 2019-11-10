@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 import javax.transaction.Transactional;
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/user")
@@ -28,7 +29,7 @@ public class SpringbootDemoController {
 
     @PostMapping
     @Transactional
-    public ResponseEntity execute(@RequestBody UserRequest request, UriComponentsBuilder uri){
+    public ResponseEntity execute(@RequestBody @Valid UserRequest request, UriComponentsBuilder uri){
         UserResponse response = service.execute(request);
 
         return ResponseEntity.created(
@@ -39,7 +40,7 @@ public class SpringbootDemoController {
     @PutMapping("/{id}")
     @Transactional
     public ResponseEntity execute(@PathVariable Long id,
-                                  @RequestBody UserRequest request){
+                                  @RequestBody @Valid UserRequest request){
 
         UserResponse response = service.execute(id, request);
 
