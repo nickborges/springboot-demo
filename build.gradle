@@ -1,5 +1,5 @@
 plugins {
-	id 'org.springframework.boot' version '2.2.2.BUILD-SNAPSHOT'
+	id 'org.springframework.boot' version '2.1.4.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 	id 'java'
 }
@@ -7,6 +7,8 @@ plugins {
 group = 'br.com.springboot.demo'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
+project.name = 'springboot-demo'
+project.description = 'teste'
 
 configurations {
 	developmentOnly
@@ -23,18 +25,22 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'com.h2database:h2'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+	implementation 'com.h2database:h2'
 	/**** lombok ****/
 	implementation 'org.projectlombok:lombok:1.18.4'
 	annotationProcessor 'org.projectlombok:lombok:1.18.4'
 	/**** swagger ****/
-	compile("io.springfox:springfox-swagger2:2.9.2")
-	compile("io.springfox:springfox-swagger-ui:2.9.2")
+	implementation 'io.springfox:springfox-swagger2:2.9.2'
+	implementation 'io.springfox:springfox-swagger-ui:2.9.2'
+	/**** Actuator e Monitoramento Spring Boot Client ****/
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'de.codecentric:spring-boot-admin-starter-client:2.1.4'
 
 }
 

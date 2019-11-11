@@ -1,4 +1,9 @@
 spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:8081 #Monitoramento
+      api-path: /instances
   datasource:
     driverClassName: org.h2.Driver
     url: jdbc:h2:mem:springboot-demo
@@ -16,3 +21,23 @@ spring:
       hibernate:
         show_sql: true
         format_sql: true
+
+#Monitoramento
+management:
+  security:
+    enabled: false
+  endpoint:
+    health:
+      show-details: always
+    web:
+      exposure:
+        include: "*"
+info:
+  app:
+    name: ^project.name^
+    description: ^project.description^
+#    version: ^project.version^
+#    encoding: ^project.build.sourceEncoding^
+#    java:
+#      version: ^java.version^
+#Monitoramento
