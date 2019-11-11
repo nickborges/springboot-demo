@@ -13,3 +13,4 @@ pluginManagement {
 	}
 }
 rootProject.name = 'springboot-demo'
+project.description = 'teste'

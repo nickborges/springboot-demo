@@ -17,7 +17,7 @@
 - Dependência spring-boot-devtools, hot deploy;
 - Dependência spring-boot-starter-data-jpa, Spring Data;
 - Configurar o Lombok;
-- Banco de dados H2, configurar o console do H2 com propriedades no arquivo src/main/resources/application.properties;
+- Banco de dados H2, configurar o console do H2 com propriedades no arquivo src/main/resources/application.yml;
 
 ### SWAGGER: 
 - colocar no application @EnableSwagger2
@@ -99,6 +99,41 @@
 - O método getOne lança uma exception quando o id passado como parâmetro não existir no banco de dados;
 - O método findById retorna um objeto Optional<>, que pode ou não conter um objeto.
 
+### PAGINAÇÃO:
+- habilitar a paginação na classe application:
+    * @EnableSpringDataWebSupport
+- incluir no parâmetro método do controller:
+    * @PageableDefault(sort = "nomedocampo", direction = Direction.DESC, page = 0, size = 10) Pageable paginacao
+    * @PageableDefault, não é obrigatório é usado apenas se quiser ter valores default
+- exemplo de chamada:
+    * http://localhost:8080/user/all?page=0&size=10&sort=name,asc
+    * localhost:8080/user/all?page=0&size=10&sort=name,asc&sort=id,asc
+
+### CACHE:
+- habilitar o cache na classe application:
+    * @EnableCaching
+- incluir no método do controller: 
+    * @Cacheable(value = "nomeDoAtributoDeCache")
+- incluir no método do controller(alteração, para limpar o cache): 
+    * @CacheEvict(value = "nomeDoAtributoDeCache", allEntries = true)
+
+### MONITORAMENTO ACTUATOR:
+- http://localhost:8080/actuator
+    * Actuator, só devolve json mas pode ser usado o Spring Bood Admin (uma aplicação web criada por uma empresa alemã para mostrar graficamente)
+    * Incluir as dependências: 
+        * implementation 'org.springframework.boot:spring-boot-starter-actuator'
+        * implementation 'de.codecentric:spring-boot-admin-starter-client:2.1.4'
+    * application.propertires
+        * management.endpoint.health.show-details=always
+        * management.endpoints.web.exposure.include=*
+        * info.app.name=@project.name@
+        * info.app.description=@project.description@
+        * info.app.version=@project.version@
+        * info.app.encoding=@project.build.sourceEncoding@
+        * info.app.java.version=@java.version@	    
+        * spring.boot.admin.client.url=http://localhost:8081
+
+
 ### AUTENTICAÇÃO:
 	http://localhost:8080/auth
 	{
@@ -119,37 +154,6 @@
 - Stateless ou Sem estado(é um protocolo de comunicação que considera cada requisição como uma transação independente que não está relacionada a qualquer requisição anterior, depois do retorno da requisição nenuma sessão é armazenada.)
 - OAuth2:
 
-
-
-
-### PAGINAÇÃO:
-- habilitar a paginação na classe application:
-    * @EnableSpringDataWebSupport
-- incluir no parâmetro método do controller:
-    * @PageableDefault(sort = "nomedocampo", direction = Direction.DESC, page = 0, size = 10) Pageable paginacao
-    * @PageableDefault, não é obrigatório é usado apenas se quiser ter valores default
-- exemplo de chamada:
-    * http://localhost:8080/user/all?page=0&size=10&sort=name,asc
-    * localhost:8080/user/all?page=0&size=10&sort=name,asc&sort=id,asc
-
-
-### CACHE:
-- habilitar o cache na classe application:
-    * @EnableCaching
-- incluir no método do controller: 
-    * @Cacheable(value = "nomeDoAtributoDeCache")
-- incluir no método do controller(alteração, para limpar o cache): 
-    * @CacheEvict(value = "nomeDoAtributoDeCache", allEntries = true)
-
-
-### MONITORAMENTO ACTUATOR:
-	http://localhost:8080/actuator
-	só devolve json: mas pode ser usado o Spring Bood Admin (uma aplicação web criada por uma empresa alemã)
-	1) criar um projeto com Spring initialazer 
-	2) seguir o readme do https://github.com/codecentric/spring-boot-admin
-
-
-	
 
 ### HTTP Status:
 
