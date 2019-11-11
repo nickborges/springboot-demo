@@ -110,6 +110,8 @@
     * localhost:8080/user/all?page=0&size=10&sort=name,asc&sort=id,asc
 
 ### CACHE:
+- incluir dependência:
+    * implementation 'org.springframework.boot:spring-boot-starter-cache'
 - habilitar o cache na classe application:
     * @EnableCaching
 - incluir no método do controller: 
