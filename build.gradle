@@ -1,5 +1,5 @@
 plugins {
-	id 'org.springframework.boot' version '2.1.4.RELEASE'
+	id 'org.springframework.boot' version '2.2.2.BUILD-SNAPSHOT'
 	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 	id 'java'
 }
@@ -7,8 +7,6 @@ plugins {
 group = 'br.com.springboot.demo'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
-project.name = 'springboot-demo'
-project.description = 'teste'
 
 configurations {
 	developmentOnly
@@ -40,7 +38,7 @@ dependencies {
 	implementation 'io.springfox:springfox-swagger-ui:2.9.2'
 	/**** Actuator e Monitoramento Spring Boot Client ****/
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
-	implementation 'de.codecentric:spring-boot-admin-starter-client:2.1.4'
+	implementation 'de.codecentric:spring-boot-admin-starter-client:2.1.6'
 
 }
 
