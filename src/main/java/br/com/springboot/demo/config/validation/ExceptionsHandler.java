@@ -1,7 +1,5 @@
 package br.com.springboot.demo.config.validation;
 
-import lombok.Builder;
-import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -24,6 +22,9 @@ public class ExceptionsHandler {
         return ResponseEntity.notFound().build();
     }
 
+    /**
+     * tratamento de exceção da validação de campos
+     */
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity handle(MethodArgumentNotValidException exception){
         List<FieldException> fields = new ArrayList<>();
@@ -40,6 +41,9 @@ public class ExceptionsHandler {
         return ResponseEntity.badRequest().body(fields);
     }
 
+    /**
+     * tratamento de exceção de erro interno
+     */
     @ExceptionHandler(Exception.class)
     public ResponseEntity hadle(Exception exception){
         return ResponseEntity
@@ -51,10 +55,5 @@ public class ExceptionsHandler {
 
     }
 
-    @Builder
-    @Getter
-    static final class Message{
-        private String error;
-        private String message;
-    }
+
 }

@@ -149,13 +149,16 @@
 		“senha”: “123456”
 	}
 
-	1) habilitar o spring security com a dependência
-	1) colocar a dependência do JJWT 
-	2) Criar a classe de configuração, SecurityConfigurations:
-	3) Criar a classe de serviço, AutenticacaoService:
-	4) Criar a Entity, Perfil que implementa GrantedAuthority:
-		GrantedAuthority = diz para o spring que é a classe que representa o perfil de acesso.
-	5) Colocar na Entity Usuario, implements UserDetails
+- Habilitar o spring security com a dependência(JJWT) 
+- Criar a classe de configuração, SecurityConfigurations:
+
+- Criar a classe de serviço, AuthenticationTokenFilter:
+    * responsável por recuperar o token do header da requisição
+    
+- Criar a Entity, Perfil que implementa GrantedAuthority:
+    * GrantedAuthority = diz para o spring que é a classe que representa o perfil de acesso.
+    
+- Colocar na Entity Usuario, implements UserDetails
 
 - Security: autenticação tradicional, com usuário e senha, sempre que o usuário efetua login, o servidor cria uma sessão para guardar essas informações e a cada requisição o servidor valida os dados desta requisição com a sessão armazenada em memória (precisando ter bastante espaço em memória para armezenar cada requisição). Isso não atende a boa prática(princípio) do modelo REST, o ideal é que a nossa autenticação seja stateless(no caso do token).
 - Security JWT: Não cria uma sessão como no modo tradicional, usa o padrão Stateless ou “Sem estado”
