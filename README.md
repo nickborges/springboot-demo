@@ -20,9 +20,12 @@
 - Banco de dados H2, configurar o console do H2 com propriedades no arquivo src/main/resources/application.yml;
 
 ### SWAGGER: 
-- colocar no application @EnableSwagger2
-- criar a classe SwaggerConfigurations
-- http://localhost:8080/swagger-ui.html
+- colocar no application:
+    * @EnableSwagger2
+- criar a classe:
+    * SwaggerConfigurations
+- exemplo de chamada:
+    * http://localhost:8080/swagger-ui.html
 
 ### CONTROLLER’S:
 - Anotações @Controller ou @RestController e @RequestMapping
@@ -112,6 +115,9 @@
 ### CACHE:
 - incluir dependência:
     * implementation 'org.springframework.boot:spring-boot-starter-cache'
+- Criar a classe: 
+    * CacheConfiguration
+    * @EnableCaching e @Configuration
 - habilitar o cache na classe application:
     * @EnableCaching
 - incluir no método do controller: 
