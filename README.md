@@ -23,8 +23,6 @@
 - colocar a dependência: 
 	* implementation 'io.springfox:springfox-swagger2:2.9.2'
 	* implementation 'io.springfox:springfox-swagger-ui:2.9.2'
-- colocar no application:
-    * @EnableSwagger2
 - criar a classe:
     * SwaggerConfigurations
 - exemplo de chamada:
