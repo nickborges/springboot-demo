@@ -39,8 +39,8 @@
 	* status 200: sucesso
 	* status 301: Moved Permanently
 	* status 401: não autorizado
-    * status 403: Forbidden
-	* status 404: caso não ache o regitro para deletar
+    	* status 403: Forbidden
+	* status 404: caso não ache o regitro
 
 - POST @PostMapping; (cria um novo recurso)
 	* @RequestBody, para informar no parâmetro para o spring que é para pegar o conteúdo do corpo do método.
