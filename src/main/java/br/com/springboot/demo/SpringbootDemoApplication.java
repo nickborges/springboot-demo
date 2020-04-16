@@ -7,7 +7,7 @@ import org.springframework.data.web.config.EnableSpringDataWebSupport;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@EnableSpringDataWebSupport
+//@EnableSpringDataWebSupport
 @EnableSwagger2
 public class SpringbootDemoApplication {
 

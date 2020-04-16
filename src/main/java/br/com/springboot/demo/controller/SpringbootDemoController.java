@@ -16,14 +16,13 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/user")
 public class SpringbootDemoController {
 
     @Autowired
     SpringbootDemoService service;
 
-    @GetMapping("/all")
-    @Cacheable("findUsers")
+    @GetMapping("/users")
+    @Cacheable("users")
     public ResponseEntity execute(
             @PageableDefault(sort = "name",
                              direction = Sort.Direction.ASC,
@@ -34,14 +33,14 @@ public class SpringbootDemoController {
     }
 
     @GetMapping("/{id}")
-    @Cacheable("findUsers")
+    @Cacheable("users")
     public ResponseEntity execute(@PathVariable Long id){
         return ResponseEntity.ok(service.execute(id));
     }
 
     @PostMapping
     @Transactional
-    @CacheEvict(value = "findUsers", allEntries = true)
+    @CacheEvict(value = "users", allEntries = true)
     public ResponseEntity execute(@RequestBody @Valid UserRequest request, UriComponentsBuilder uri){
         UserResponse response = service.execute(request);
 
@@ -52,7 +51,7 @@ public class SpringbootDemoController {
 
     @PutMapping("/{id}")
     @Transactional
-    @CacheEvict(value = "findUsers", allEntries = true)
+    @CacheEvict(value = "users", allEntries = true)
     public ResponseEntity execute(@PathVariable Long id,
                                   @RequestBody @Valid UserRequest request){
 
@@ -63,7 +62,7 @@ public class SpringbootDemoController {
 
     @DeleteMapping("/{id}")
     @Transactional
-    @CacheEvict(value = "findUsers", allEntries = true)
+    @CacheEvict(value = "users", allEntries = true)
     public ResponseEntity executed(@PathVariable Long id){
         return ResponseEntity.ok(service.executed(id));
 
