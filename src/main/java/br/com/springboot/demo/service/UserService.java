@@ -7,12 +7,13 @@ import br.com.springboot.demo.mapper.UserMapper;
 import br.com.springboot.demo.model.User;
 import br.com.springboot.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import br.com.springboot.demo.config.validation.NotFoundException;
 
 @Service
-public class SpringbootDemoService {
+public class UserService {
 
     @Autowired
     UserRepository userRepository;
@@ -20,10 +21,8 @@ public class SpringbootDemoService {
     @Autowired
     UserMapper userMapper;
 
-    public UsersResponse execute(Pageable page){
-        return userMapper.mapper(
-                userRepository.findAll(page).getContent()
-        );
+    public Page<User> execute(Pageable page){
+        return userRepository.findAll(page);
     }
 
     public UserResponse execute(final Long id){

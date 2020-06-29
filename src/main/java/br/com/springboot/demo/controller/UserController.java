@@ -2,10 +2,11 @@ package br.com.springboot.demo.controller;
 
 import br.com.springboot.demo.domain.UserRequest;
 import br.com.springboot.demo.domain.UserResponse;
-import br.com.springboot.demo.service.SpringbootDemoService;
+import br.com.springboot.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
@@ -16,14 +17,14 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 @RestController
-public class SpringbootDemoController {
+public class UserController {
 
     @Autowired
-    SpringbootDemoService service;
+    UserService service;
 
     @GetMapping("/users")
     @Cacheable("users")
-    public ResponseEntity execute(
+    public ResponseEntity<Page> execute(
             @PageableDefault(sort = "name",
                              direction = Sort.Direction.ASC,
                              page = 0,
@@ -49,7 +50,7 @@ public class SpringbootDemoController {
         ).body(response);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/user/{id}")
     @Transactional
     @CacheEvict(value = "users", allEntries = true)
     public ResponseEntity execute(@PathVariable Long id,

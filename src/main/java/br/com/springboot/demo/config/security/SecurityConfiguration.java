@@ -2,6 +2,7 @@ package br.com.springboot.demo.config.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -30,7 +31,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                //.antMatchers(HttpMethod.GET,"/user").permitAll()  // permite um endponit especifico
+                .antMatchers(HttpMethod.GET,"/web/monitoramento").permitAll()  // permite um endponit especifico
                 //.anyRequest().permitAll()                         //libera o acesso para qualquer outro endpoint
                 .anyRequest().authenticated()                       //restringe qualquer outro endpoint
                 .and().csrf().disable()//desabilita validação de ataque hacker do Spring pq será feito por token(é utilizado no modo tradicional de login)
