@@ -6,12 +6,15 @@ public class BuscarPessoaResponse {
     private String nome;
     private Integer idade;
 
-    public Long getId() {
-        return id;
+    public BuscarPessoaResponse() {}
+    public BuscarPessoaResponse(Long id, String nome, Integer idade) {
+        this.id = id;
+        this.nome = nome;
+        this.idade = idade;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public Long getId() {
+        return id;
     }
 
     public String getNome() {
@@ -20,6 +23,10 @@ public class BuscarPessoaResponse {
 
     public Integer getIdade() {
         return idade;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setNome(String nome) {
