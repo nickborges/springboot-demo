@@ -9,7 +9,6 @@
 
 
 ### CRIAR O PROJETO:
-<<<<<<< HEAD
 * Através do Spring Initialazer https://start.spring.io;
 
 ### CONFIGURAÇÕES:
