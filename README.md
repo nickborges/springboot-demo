@@ -9,6 +9,7 @@
 
 
 ### CRIAR O PROJETO:
+<<<<<<< HEAD
 * Através do Spring Initialazer https://start.spring.io;
 
 ### CONFIGURAÇÕES:
@@ -149,7 +150,7 @@
 
 
 ### AUTENTICAÇÃO:
-	
+
 * Habilitar o spring security com a dependência(JJWT) 
 * Criar a classe de configuração, SecurityConfigurations:
 * Criar a classe de serviço, AuthenticationTokenFilter:
@@ -171,7 +172,7 @@
           'http://localhost:8082/user/all?page=0&size=5&sort=name,asc,id,asc' \
           -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBdXRlbnRpY2Fkb3IgRGVtbyIsInN1YiI6IjEiLCJpYXQiOjE1NzM1OTQwNjUsImV4cCI6MTU3MzU5NDEyNX0.1h0m9qCW0KmGgwwI1qRZJ5YXzXjaA6ZZ0fycNjNCsbE' \
           -H 'Cache-Control: no-cache'
-        ```` 
+        ````
           
 
 ### HTTP Status:
